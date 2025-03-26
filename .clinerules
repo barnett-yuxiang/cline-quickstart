@@ -1,0 +1,71 @@
+# Project Configuration
+
+## Tech Stack
+- Next.js 14+ with App Router
+- TypeScript 5+
+- Tailwind CSS for styling
+- Supabase for backend (PostgreSQL)
+- Vercel for deployment
+- GitHub for version control
+- React Hook Form for forms
+- Zod for schema validation
+
+## Project Structure
+/src
+  /app         # Next.js App Router pages (file-based routing)
+    /api       # API routes
+  /components  # Shared React components (atomic design encouraged)
+    /ui        # UI primitives (buttons, inputs, etc.)
+  /lib         # Utility functions and business logic
+  /types       # TypeScript types and interfaces
+  /styles      # Global styles and Tailwind config
+/supabase
+  /migrations  # SQL migration files
+  /seed        # Seed data files
+  /functions   # Database functions
+/public        # Static assets (images, fonts, etc.)
+
+## Code Quality Standards
+- TypeScript strict mode enabled
+- ESLint and Prettier configured
+- Components should be small and focused
+- Follow Next.js best practices
+- Use server components where possible
+- Client-side state management via Zustand
+
+## Database Migrations
+SQL files in /supabase/migrations should:
+- Use sequential numbering: 001, 002, etc.
+- Include descriptive names (e.g., 001_create_users_table.sql)
+- Include comments explaining changes
+- Be reviewed by Cline before execution
+- Follow Supabase best practices
+- Include down migrations when appropriate
+
+## Development Workflow
+- Feature branches should be created from main
+- Pull requests require:
+  - Code review by Cline
+  - Passing CI checks
+  - Updated documentation
+- Vercel automatically deploys previews for PRs
+- Main branch deploys to production automatically
+
+## Testing
+- Unit tests in /tests directory
+- Component tests using Storybook
+- End-to-end tests with Playwright
+- Test coverage minimum 80%
+
+## Security
+DO NOT read or modify:
+- .env files
+- **/config/secrets.*
+- Any file containing API keys or credentials
+- Any authentication-related files
+- Database connection strings
+
+## Documentation
+- Update cline_docs/ with relevant changes
+- Keep README.md current
+- Document architectural decisions
